@@ -1,0 +1,9 @@
+.searchWrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.searchFilter button{
+    margin-left: 8px;
+}
