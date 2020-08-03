@@ -1,0 +1,23 @@
+.searchWrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.searchFilter button{
+    margin-left: 8px;
+}
+.counter{
+    user-select: none;
+    font-size: 10px;
+    color: #c9c9c9;
+    margin-left: 10px;
+}
+.counter span{
+    margin-left: 3px;
+    padding: 3px;
+    border-left: 1px #c9c9c9 solid;
+}
+.counter :last-child {
+    border-right: 1px #c9c9c9 solid;
+}

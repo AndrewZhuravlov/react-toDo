@@ -1,5 +1,6 @@
 .butWrapper {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 8px;
