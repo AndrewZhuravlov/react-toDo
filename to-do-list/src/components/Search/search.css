@@ -4,10 +4,14 @@
     flex-wrap: nowrap;
 }
 
+.searchFilter{
+    display: flex;
+}
 .searchFilter button{
     margin-left: 8px;
 }
 .counter{
+    display: flex;
     user-select: none;
     font-size: 10px;
     color: #c9c9c9;

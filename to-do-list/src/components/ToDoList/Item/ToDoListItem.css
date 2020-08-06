@@ -1,10 +1,17 @@
-.butWrapper {
+.butWrapper   {
+    user-select: none;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 8px;
+    cursor: pointer;
 }
 .danger{
     margin-right: 8px;
 }
+
+.done{
+    text-decoration: line-through;
+}
+

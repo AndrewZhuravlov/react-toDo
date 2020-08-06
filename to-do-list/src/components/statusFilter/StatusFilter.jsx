@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import st from './StatusFilter.css';
 
-const StatusFilter =(props)=>{
-    return(
+export default class StatusFilter extends Component {
+  render() {
+    return (
       <div className="searchFilter">
-          <button type="button" className="btn btn-secondary">All</button>
-          <button type="button" className="btn btn-light">Active</button>
-          <button type="button" className="btn btn-light">Done</button>
-        </div>
+        <button type="button" className="btn btn-secondary butWidth">All</button>
+        <button type="button" className="btn btn-light butWidth">Active</button>
+        <button type="button" className="btn btn-light butWidth">Done</button>
+      </div>
     );
   }
+}
 
-  export default StatusFilter;
+
