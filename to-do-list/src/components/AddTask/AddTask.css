@@ -1,0 +1,10 @@
+
+
+.addTaskWrapper{
+     display: flex;
+     align-items: center;
+}
+
+.addTaskWrapper button {
+    margin-left: 8px;
+}

@@ -6,7 +6,7 @@ const Search = () => {
   return (
     <div className="searchWrapper">
       <div>
-        <input placeholder='search' type="text" />
+        <input placeholder='... type to search' type="text" />
       </div>
       <StatusFilter/>
       <div className="counter">
