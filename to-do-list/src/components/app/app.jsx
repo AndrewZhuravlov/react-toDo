@@ -51,7 +51,7 @@ export default class App extends Component {
 
     this.setState(({ todoData }) => {
 
-      const newArr = todoData.concat(newItemObj);
+      const newArr = todoData.concat([newItemObj]);
 
       return {
         todoData: newArr,
