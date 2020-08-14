@@ -15,6 +15,7 @@ export default class AddTask extends Component {
   }
 
   onSubmit = (e)=>{
+
     if(this.state.label ===""){
       e.preventDefault();
       return false;
@@ -22,6 +23,10 @@ export default class AddTask extends Component {
 
     e.preventDefault();
     this.props.onTaskAdd(this.state.label);
+    this.setState({
+      label: '',
+    })
+    
   }
   render() {
 
@@ -34,6 +39,7 @@ export default class AddTask extends Component {
           onSubmit={this.onSubmit}
         >
           <input type="text"
+            value = {this.state.label}
             placeholder='... add new task'
             onChange={this.onLabelChange} />
           <button type="submit" className="btn btn-primary">Add your task</button>

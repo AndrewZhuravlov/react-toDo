@@ -16,8 +16,18 @@ export default class App extends Component {
       this.toDoItemCreator('I did It'),
       this.toDoItemCreator('Use the Tyzik, do the palka'),
     ],
+    term: '',
+    filter: 'All',
   };
 
+  onFilterChanger = (label) =>{
+    
+    this.setState(() =>{ 
+      return {
+        filter: label,
+      }
+    })
+  }  
   deleteItem = (id) => {
 
     this.setState(({ todoData }) => {
@@ -105,23 +115,64 @@ export default class App extends Component {
     })
   }
 
+  onSearchStateChanger = (text) => {
+
+this.setState(() => {
+    return{
+      term: text,
+    }
+})
+  }
+  
+  filterr = (items, filter) => {
+
+      switch(filter){
+        case 'Active' :
+          return items.filter(item => !item.done) ;
+        case 'Done' : 
+          return items.filter(item => item.done );
+        case 'All' :
+          return items;
+        default : 
+          return items;  
+      
+    }
+  }
+
+  search = (items, term) =>{
+    if(term.length === 0){
+      return items;
+    }
+    return items.filter((item)=>{
+
+      return item.label
+      .toLowerCase()
+      .indexOf(term.toLowerCase()) > -1;
+    });
+  } 
   render() {
     
-    const { todoData } = this.state;
+    const { todoData, term, filter } = this.state;
     const doneItems = todoData.filter(el=> el.done);
     const countedDoneItems = doneItems.length;
     const stillTodoItems = todoData.length - countedDoneItems;
-
+    const visibleItems = this.filterr(this.search(todoData, term), filter);
     return (
       <div className="container">
         <div className="todoWrapper"> 
           <AppHeader />
-          <Search todo = {stillTodoItems} done = {countedDoneItems} />
+          <Search 
+            todo = {stillTodoItems}
+            done = {countedDoneItems}
+            filter ={filter}
+            onSearchStateChanger = { this.onSearchStateChanger }
+            onFilterChanger ={this.onFilterChanger} />
           <ToDoList
             onItemDelete={this.deleteItem}
-            todos={this.state.todoData}
+            todos={visibleItems}
             onToggleDone = {this.onToggleDone}
             onToggleImportant = {this.onToggleImportant}
+            
              />
           < AddTask onTaskAdd={this.taskAdd} />
         </div>

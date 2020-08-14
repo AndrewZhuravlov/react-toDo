@@ -25,3 +25,10 @@
 .counter :last-child {
     border-right: 1px #c9c9c9 solid;
 }
+
+  /* @media screen  (min-width: 576px) { 
+    .counter{
+        display: none;
+    }
+
+ } */

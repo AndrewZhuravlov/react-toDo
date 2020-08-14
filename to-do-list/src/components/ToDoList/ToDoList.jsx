@@ -13,8 +13,8 @@ const ToDoList = ({ todos, onItemDelete, onToggleDone, onToggleImportant }) => {
       <li key={id}>
         <ToDOListItem {...itemProps} 
         onItemDelete={ () => onItemDelete(id)}
-        onToggleDone = {()=>{onToggleDone(id)}}
-        onToggleImportant = {()=>{onToggleImportant(id)}}
+        onToggleDone = { ()=>{onToggleDone(id)}}
+        onToggleImportant = { ()=>{onToggleImportant(id)}}
         />
       </li>
     )
