@@ -14,7 +14,6 @@ export default class App extends Component {
       this.toDoItemCreator('Drink Shnaps'),
       this.toDoItemCreator('Make App'),
       this.toDoItemCreator('I did It'),
-      this.toDoItemCreator('Use the Tyzik, do the palka'),
     ],
     term: '',
     filter: 'All',
